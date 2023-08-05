@@ -1,3 +1,4 @@
 node_modules/
 .env
 //git push -u origin main
+src/config/config.json
