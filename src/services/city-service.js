@@ -20,6 +20,7 @@ class CityService{
     }
         catch(error){
             console.log("something worng at service layer");
+            console.log(error);
             throw{error};
         }
     }
