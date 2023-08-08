@@ -6,11 +6,11 @@ class CityService{
     }
     async createCity(data){
         try{
-            const city =await this.CityRepository.createCity(data);
+            const city =await this.CityRepository.CreateCity(data);
             return city;
         }
         catch(error){
-            console.log("something worng at service layer");
+            console.log("something wrong at service layer");
             throw{error};
         }
     }

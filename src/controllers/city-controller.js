@@ -1,5 +1,5 @@
-const {CitySevice} =require('../service/index');
-const cityService=new CitySevice();
+const {CityService} =require('../services/index');
+const cityService=new CityService();
 const create=async (req,res)=>{
     try {
         const city = await cityService.createCity(req.body);
