@@ -1,5 +1,6 @@
 const {City}=require('../models/index');
 
+
 class CityRepository{
     async CreateCity({name}){
         try{
@@ -53,6 +54,36 @@ class CityRepository{
         }
         catch(error){
             console.log("something went wrong in the city repository layer");
+            throw{error};
+        }
+    }
+    async getAllCities(filter){// can be empty
+        try{
+            
+            if(filter.name){
+                
+                const cities=await City.findAll({
+                    
+                    // where: {
+                    //     name: {
+                    //         [Op.startsWith]: filter.name
+                    //     }
+                    // }
+                    where: { name: 
+                        { $like: filter.name+ '%' } 
+                    
+                        }
+                });
+                
+                console.log("..............reached here");
+                return cities;
+            }
+            const cities = await City.findAll();
+            return cities;
+        }
+        catch(error){
+            console.log("something went wrong in the city repository layer");
+            console.log(error);
             throw{error};
         }
     }
