@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
 
     capacity:{
       type: DataTypes.INTEGER,
-      allowNull:false,
-    defaultvalue:200}
+      defaultvalue:200,
+  }
   }, {
     sequelize,
     modelName: 'Airplane',
